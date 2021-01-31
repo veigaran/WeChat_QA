@@ -1,0 +1,72 @@
+
+<!-- 单选题 -->
+<view wx:if="{{type==0}}" class='wrap'>
+  <text>单选题</text>
+  <view class='checkbox-con'>
+    <radio-group bindchange="radioChange">
+      <label class="{{item.checked?'checkbox checked':'checkbox'}}" wx:for="{{answers}}" bindtap='radio' data-index="{{index}}" wx:key="item.name">
+        <checkbox value="{{item.name}}" checked="{{item.checked}}"/>{{item.name}}
+      </label>
+    </radio-group>
+     <button type='primary' bindtap='choiceSubmit'>提交</button>
+  </view>
+</view>
+
+<!-- 多选题 -->
+<view wx:if="{{type==1}}">
+  <view class='wrap'>
+  <text>多选题</text>
+  <view class='checkbox-con'>
+    <checkbox-group bindchange="checkboxChange">
+      <label class="{{item.checked?'checkbox checked':'checkbox'}}" wx:for="{{answers}}" bindtap='checkbox' data-index="{{index}}" wx:key="item.name">
+        <checkbox value="{{item.name}}" checked="{{item.checked}}"/> {{item.name}}
+      </label>
+    </checkbox-group>
+     <button type='primary' bindtap='choiceSubmit'>提交</button>
+  </view>
+</view>
+
+</view>
+
+<!-- 抢答问答 -->
+<view wx:if="{{type==2}}">
+  <text>抢答问答</text>
+  <button type='primary' bindtap='picSubmit'>点击参与</button>
+</view>
+
+<!-- 抢答单选 -->
+<view wx:if="{{type==3}}"class='wrap'>
+  <text>抢答单选</text>
+  <view class='checkbox-con'>
+    <radio-group bindchange="radioChange">
+      <label class="{{item.checked?'checkbox checked':'checkbox'}}" wx:for="{{answers}}" bindtap='radio' data-index="{{index}}" wx:key="item.name">
+        <checkbox value="{{item.name}}" checked="{{item.checked}}"/>{{item.name}}
+      </label>
+    </radio-group>
+     <button type='primary' bindtap='picSubmit'>提交</button>
+  </view>
+  <!-- <button type='primary' bindtap=''>提交</button> -->
+</view>
+
+<!-- 抢答多选 -->
+<view wx:if="{{type==4}}">
+  <view class='wrap'>
+  <text>抢答多选题</text>
+  <view class='checkbox-con'>
+    <checkbox-group bindchange="checkboxChange">
+      <label class="{{item.checked?'checkbox checked':'checkbox'}}" wx:for="{{answers}}" bindtap='checkbox' data-index="{{index}}" wx:key="item.name">
+        <checkbox value="{{item.name}}" checked="{{item.checked}}"/> {{item.name}}
+      </label>
+    </checkbox-group>
+     <button type='primary' bindtap='picSubmit'>提交</button>
+  </view>
+</view>
+
+</view>
+
+<!-- 抽奖摇号模式 -->
+<view wx:if="{{type==5}}">
+  <text>抽奖摇号</text>
+  <button type='primary' bindtap='picSubmit'>点击参与抽奖</button>
+</view>
+<!-- <view class="submit_btn" bindtap="submit">提交</view> -->

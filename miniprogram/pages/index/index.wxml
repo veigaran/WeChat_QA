@@ -1,0 +1,19 @@
+<!--index.wxml-->
+<view class="container">
+  <button class = "bt_1" hover-class="hover-class-1" bindtap='getScancode'>点击扫码</button>
+  <view wx:if="{{result !=''}}">
+  </view>
+  <text>\n</text><text>\n</text>
+
+  <view>
+  <image class="avatar" src='{{avatarUrl}}'></image>
+</view>
+<view>{{avatarUrl}}</view>
+
+<button open-type="getUserInfo" bindgetuserinfo="bindGetUserInfo">授权用户信息</button>
+
+<!-- <view>
+  <button bindtap="upImg">点击选择上传图</button>
+</view> -->
+
+</view>
